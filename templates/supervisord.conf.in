@@ -1,0 +1,49 @@
+
+[supervisord]
+childlogdir = ${buildout:directory}/var/log
+logfile = ${buildout:directory}/var/log/supervisord.log
+logfile_maxbytes = 50MB
+logfile_backups = 10
+loglevel = info
+pidfile = ${buildout:directory}/var/supervisord.pid
+umask = 022
+nodaemon = false
+nocleanup = false
+
+[inet_http_server]
+port = 9001
+username = 
+password = 
+
+[supervisorctl]
+serverurl = http://localhost:9001
+prompt = mamp
+username = 
+password = 
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
+
+
+[program:mysqld]
+command = ${buildout:parts-directory}/mysql-${mysql:version}/libexec/mysqld --defaults-file=${buildout:directory}/etc/my.cnf
+process_name = mysqld
+directory = ${buildout:directory}/bin
+priority = 10
+autostart = true
+redirect_stderr = true
+stdout_logfile = ${buildout:directory}/var/log/mysqld-${mysql:version}.stdout.log
+stderr_logfile = ${buildout:directory}/var/log/mysqld-${mysql:version}.stderr.log
+
+
+
+[program:httpd]
+command = ${buildout:parts-directory}/apache/bin/httpd -f ${buildout:directory}/etc/httpd.conf -DFOREGROUND
+process_name = httpd
+directory = ${buildout:directory}/bin
+priority = 10
+autostart = true
+redirect_stderr = true
+stdout_logfile = ${buildout:directory}/var/log/httpd.stdout.log
+stderr_logfile = ${buildout:directory}/var/log/httpd.stderr.log
+
