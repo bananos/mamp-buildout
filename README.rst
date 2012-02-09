@@ -12,9 +12,9 @@ Prerequisites
 --------------
 1) Make sure you have Xcode installed, otherwise all compilation stuff will fail.
 2) At least Python 2.6 is installed (2.7 is recommended)
-3) Make sure a set of following links is still valid:
+3) Make sure a set of following links is still valid
 
-.. code-block:: bash
+::
 
    http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.60.tar.gz/from/http://mysql.infocom.ua/
    http://us3.php.net/get/php-5.3.8.tar.gz/from/ua.php.net/mirror
@@ -26,13 +26,13 @@ Prerequisites
    ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.1.1.tar.gz
    http://www.apache.org/dist//httpd/httpd-2.0.64.tar.gz
 
+
 If some them fail, just fix corresponding URL in ``buildout-base.cfg``   
 
 
 Run bootstrap.py
 -----------------
-
-.. code-block:: bash
+::
 
    git clone git@github.com:bananos/mamp-buildout.git
    cd mamp-buildout
@@ -48,15 +48,21 @@ Run bootstrap.py
 Run buildout
 ------------
 
-.. code-block:: bash
+::
 
    bin/buildout
 
 
 
- 
+
+Doctest
 
 
+.. code:: python
+
+ def my_function():
+     "just a test"
+     print 8/2
 
 
 
@@ -66,7 +72,7 @@ FAQ
 
 What is buildout?
 ------------------
-`Buildout <http://www.buildout.org/>` is a Python-based build system for creating, assembling 
+`Buildout <http://www.buildout.org/>`_ is a Python-based build system for creating, assembling 
 and deploying applications from multiple parts, some of which may be non-Python-based. 
 It lets you create a buildout configuration and reproduce the same software later.
 
