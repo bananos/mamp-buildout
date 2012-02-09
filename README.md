@@ -26,7 +26,7 @@ http://www.apache.org/dist//httpd/httpd-2.2.22.tar.gz
 
 ```
 
-If some them fail, just fix corresponding URL in ``buildout-base.cfg``   
+If some of them fail, just fix corresponding URL in ``buildout-base.cfg``
 
 
 ### Run bootstrap.py
@@ -126,7 +126,7 @@ After successful buildout you'll end up with something like this:
  parts           # <---- binary distributions live there
  templates       # <---- configuration templates
  thirdparty      # <---- source code & recipe downloads
- var             # <---- mysql data, PIDs, logs
+ var             # <---- mysql data, PIDs, logs, www-root, etc.
 ```
 
 **Note:**  To tune configuration for mysql/php or apache you should modify files in ``templates/``,
