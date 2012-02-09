@@ -54,16 +54,14 @@ Run buildout
 
 
 
+Grab a cup of coffee & wait for a while for parts to compile. On core i5 mac it takes about 20min.
 
-Doctest
 
 
-.. code:: python
+Run supervisor
+---------------
 
- def my_function():
-     "just a test"
-     print 8/2
-
+@TODO
 
 
 FAQ
