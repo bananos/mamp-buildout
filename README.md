@@ -1,44 +1,43 @@
-=================
 MAMP-buildout
-=================
+==============
 Install Apache/MySQL/PHP stack on your Mac for development purposes.
 
 
 Installation
-==============
+-------------
 
-Prerequisites
---------------
-1) Make sure you have Xcode installed, otherwise all compilation stuff will fail.
-2) At least Python 2.6 is installed (homebrew python2.7 is recommended)
-3) Make sure a set of following links is still valid
+### Prerequisites
+
+1. Make sure you have Xcode installed, otherwise all compilation stuff will fail.
+2. At least Python 2.6 is installed (homebrew python2.7 is recommended)
+3. Make sure a set of following links is still valid
 
 ```bash
 
-   http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.60.tar.gz/from/http://mysql.infocom.ua/
-   http://us3.php.net/get/php-5.3.8.tar.gz/from/ua.php.net/mirror
-   http://curl.download.nextag.com/download/curl-7.20.0.tar.gz
-   http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.9.2.tar.gz
-   http://www.ijg.org/files/jpegsrc.v8c.tar.gz
-   http://prdownloads.sourceforge.net/libpng/libpng-1.4.0.tar.gz
-   http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
-   ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.1.1.tar.gz
-   http://www.apache.org/dist//httpd/httpd-2.2.22.tar.gz
+http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.60.tar.gz/from/http://mysql.infocom.ua/
+http://us3.php.net/get/php-5.3.8.tar.gz/from/ua.php.net/mirror
+http://curl.download.nextag.com/download/curl-7.20.0.tar.gz
+http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.9.2.tar.gz
+http://www.ijg.org/files/jpegsrc.v8c.tar.gz
+http://prdownloads.sourceforge.net/libpng/libpng-1.4.0.tar.gz
+http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
+ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.1.1.tar.gz
+http://www.apache.org/dist//httpd/httpd-2.2.22.tar.gz
 
 ```
 
 If some them fail, just fix corresponding URL in ``buildout-base.cfg``   
 
 
-Run bootstrap.py
------------------
+### Run bootstrap.py
+
 
 ```bash
 
-git clone git@github.com:bananos/mamp-buildout.git
-cd mamp-buildout
+[bananos@amber]# git clone git@github.com:bananos/mamp-buildout.git
+[bananos@amber]# cd mamp-buildout
 
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ /usr/bin/python2.7 bootstrap.py
+[bananos@amber]# /usr/bin/python2.7 bootstrap.py
 Creating directory '/Users/bananos/Projects/github/mamp-buildout/bin'.
 Creating directory '/Users/bananos/Projects/github/mamp-buildout/parts'.
 Creating directory '/Users/bananos/Projects/github/mamp-buildout/eggs'.
@@ -47,8 +46,8 @@ Generated script '/Users/bananos/Projects/github/mamp-buildout/bin/buildout'.
 
 ```
 
-Specify your user/group
-------------------------
+### Specify your user/group
+
 Open ``buildout.cfg``,  navigate to ``[buildout]`` section and modify user/group lines:
 
 ```ini
@@ -64,26 +63,25 @@ group = staff
 ```
 Save and proceed to next step.
 
-Run buildout
--------------
+### Run buildout
 
 ```bash
 
-bin/buildout
+[bananos@amber]# bin/buildout
 
 ```
 
 Grab a cup of coffee & wait for a while for parts to compile. On core i5 mac it takes about 20min.
 
 
-Run supervisor
----------------
-Once compilation is done, run `supervisor <http://supervisord.org/>`_, a client/server system that allows its users
+### Run supervisor
+
+Once compilation is done, run [supervisor](http://supervisord.org), a client/server system that allows its users
 to monitor and control a number of processes on UNIX-like operating systems.
 
 ```bash
 
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ bin/supervisord
+[bananos@amber]# bin/supervisord
 
 ```
 
@@ -91,15 +89,14 @@ Once supervisor daemon starts, you've already started mysql & apache processes. 
 
 ```bash
 
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ bin/supervisorctl status
+[bananos@amber]# bin/supervisorctl status
 httpd                            RUNNING    pid 46002, uptime 0:00:08
 mysqld                           RUNNING    pid 46003, uptime 0:00:08
 
 ```
 
 
-Test it in your browser
--------------------------
+### Test it in your browser
 
 Go to ``var/www``  and create a simple ``index.php``:
 
@@ -117,13 +114,13 @@ Open your browser at ``http://localhost:8080``, you should see PHP info page.
 
 
 Project structure
-======================
+------------------
 
 After successful buildout you'll end up with something like this:
 
 ```bash
 
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ ls -l
+[bananos@amber]# ls -l
  README.md
  bin
  bootstrap.py
@@ -140,18 +137,19 @@ bananos@amber: ~/Projects/github/mamp-buildout (master) $ ls -l
 ```
 
 **Note:**  To tune configuration for mysql/php or apache you should modify files in ``templates/``,
-not int ``etc/`` which is recreated each time buildout is run.
+not in ``etc/`` which is recreated each time buildout is run.
 
 
 Working with MySQL
-======================
+-------------------
 
 ``mysql`` and ``mysqladmin`` are symlinked into ``bin/`` for convenience.
 
 
 ```bash
 
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ bin/mysql --protocol=TCP -u root --port=3305 --host=localhost
+[bananos@amber]# bin/mysql --protocol=TCP -u root --port=3305 --host=localhost
+
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 1
 Server version: 5.1.60-innodb-plugin-log Source distribution
@@ -196,19 +194,18 @@ mysql>
 
 
 Logs
-=====
+-----
 All logging happens to be in ``var/log/`` directory:
 
 ```bash
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ ls -l var/log/
+
+[bananos@amber]# ls -l var/log/
 total 32
 -rw-r--r--  1 bananos  staff  1531 Feb  9 16:30 httpd.stdout.log
 -rw-r--r--  1 bananos  staff     0 Feb  9 16:30 httpd_access.log
 -rw-rw----  1 bananos  staff   303 Feb  9 16:30 mysqld-5.1.60.slow.log
 -rw-r--r--  1 bananos  staff   925 Feb  9 16:30 mysqld-5.1.60.stdout.log
 -rw-r--r--  1 bananos  staff   736 Feb  9 16:31 supervisord.log
-bananos@amber: ~/Projects/github/mamp-buildout (master) $
-
 
 ```
 
@@ -216,7 +213,8 @@ MySQL/Apache stdout/stderr logs are intercepted by supervisor:
 
 ```bash
 
-bananos@amber: ~/Projects/github/mamp-buildout (master) $ bin/supervisorctl tail httpd
+[bananos@amber]# bin/supervisorctl tail httpd
+
 httpd: Could not reliably determine the server's fully qualified domain name, using 192.168.99.249 for ServerName
 [Thu Feb 09 16:30:40 2012] [info] Init: Seeding PRNG with 144 bytes of entropy
 [Thu Feb 09 16:30:40 2012] [info] Init: Generating temporary RSA private keys (512/1024 bits)
@@ -234,45 +232,42 @@ httpd: Could not reliably determine the server's fully qualified domain name, us
 [Thu Feb 09 16:30:40 2012] [info] Server built: Feb  9 2012 16:02:28
 [Thu Feb 09 16:30:40 2012] [debug] prefork.c(1023): AcceptMutex: flock (default: flock)
 
-
 ```
 
 
-
 PHP/MySQL versions known to work
-================================
+--------------------------------
 
 This buildout currently tested on following configurations:
 
-1) php-5.3.8 / MySQL-5.1.60
-
-2) @TODO add php-5.2 / php-5.1  and MySQL 5.5 versions
+1. php-5.3.8 / MySQL-5.1.60
+2. @TODO add php-5.2 / php-5.1  and MySQL 5.5 versions
 
 
 
 TODO
-======
-1) Add support for php-5.1, php-5.2
-2) Add PostgreSQL
+-----
+1. Add support for php-5.1, php-5.2
+2. Add PostgreSQL
 
 
 
 FAQ
-======
+----
 
-What is buildout?
-------------------
-`Buildout <http://www.buildout.org/>`_ is a Python-based build system for creating, assembling 
+### What is buildout?
+
+[Buildout](http://www.buildout.org/) is a Python-based build system for creating, assembling
 and deploying applications from multiple parts, some of which may be non-Python-based. 
 It lets you create a buildout configuration and reproduce the same software later.
 
 
-Why didn't you use homebrew?
------------------------------
-Though, `brew <http://mxcl.github.com/homebrew/>`_ is really cool it does not support installation of custom php/mysql versions in an easy manner.
+### Why didn't you use homebrew?
+
+Though, [brew](http://mxcl.github.com/homebrew/) is really cool it does not support installation of custom php/mysql versions in an easy manner.
 
 
-Why not `MAMP <http://www.mamp.info/>`_?
------------------------------------------
+### Why not [MAMP](http://www.mamp.info/)?
+
 Because I'm a command-liner, dude :)
 
