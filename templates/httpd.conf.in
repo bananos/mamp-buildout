@@ -39,7 +39,7 @@ ServerRoot ${apache:location}
 #
 #Listen 12.34.56.78:80
 #Listen 12080
-Listen ${apache:port}
+Listen ${apache-conf:port}
 
 #
 # Dynamic Shared Object (DSO) Support
@@ -108,7 +108,7 @@ ServerAdmin you@example.com
 # symbolic links and aliases may be used to point to other locations.
 #
 #DocumentRoot "/srv/gg/parts/apache/htdocs"
-DocumentRoot ${apache:www-root}
+DocumentRoot ${apache-conf:www-root}
 
 #
 # Each directory to which Apache has access can be configured with respect
@@ -136,7 +136,7 @@ DocumentRoot ${apache:www-root}
 # This should be changed to whatever you set DocumentRoot to.
 #
 
-<Directory "${apache:www-root}">
+<Directory "${apache-conf:www-root}">
     #
     # Possible values for the Options directive are "None", "All",
     # or any combination of:
