@@ -2,6 +2,9 @@ MAMP-buildout
 ==============
 Install Apache/MySQL/PHP stack on your Mac for development purposes.
 
+**PHP 5.2/5.3 support!**
+
+Works on OSX 10.7.3 / Xcode 4.3 / llvm-gcc-4.2
 
 Installation
 -------------
@@ -16,10 +19,10 @@ Installation
 
 http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.60.tar.gz/from/http://mysql.infocom.ua/
 http://us3.php.net/get/php-5.3.8.tar.gz/from/ua.php.net/mirror
-http://curl.download.nextag.com/download/curl-7.20.0.tar.gz
-http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.9.2.tar.gz
-http://www.ijg.org/files/jpegsrc.v8c.tar.gz
-http://prdownloads.sourceforge.net/libpng/libpng-1.4.0.tar.gz
+http://us3.php.net/get/php-5.2.17.tar.gz/from/ua.php.net/mirror
+http://curl.linux-mirror.org/download/curl-7.25.0.tar.gz
+http://www.ijg.org/files/jpegsrc.v8d.tar.gz
+http://prdownloads.sourceforge.net/libpng/libpng-1.5.10.tar.gz
 http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
 ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.1.1.tar.gz
 http://www.apache.org/dist//httpd/httpd-2.2.22.tar.gz
@@ -231,13 +234,14 @@ PHP/MySQL versions known to work
 This buildout currently tested on following configurations:
 
 1. php-5.3.8 / MySQL-5.1.60
+2. php-5.2.17 / MySQL-5.1.60
 2. @TODO add php-5.2 / php-5.1  and MySQL 5.5 versions
 
 
 
 TODO
 -----
-1. Add support for php-5.1, php-5.2
+1. Add support for php-5.1
 2. Add PostgreSQL
 
 
