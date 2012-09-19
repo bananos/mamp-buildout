@@ -5,6 +5,7 @@ Install Apache/MySQL/PHP stack on your Mac for development purposes.
 **PHP 5.2/5.3 support!**
 
 Works on OSX 10.7.3 / Xcode 4.3 / llvm-gcc-4.2
+Works on OSX 10.7.4 / Xcode 4.4.1 / llvm-gcc-4.2
 
 Installation
 -------------
@@ -20,7 +21,7 @@ Installation
 http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.60.tar.gz/from/http://mysql.infocom.ua/
 http://us3.php.net/get/php-5.3.8.tar.gz/from/ua.php.net/mirror
 http://us3.php.net/get/php-5.2.17.tar.gz/from/ua.php.net/mirror
-http://curl.linux-mirror.org/download/curl-7.25.0.tar.gz
+http://curl.haxx.se/download/curl-7.25.0.tar.gz
 http://www.ijg.org/files/jpegsrc.v8d.tar.gz
 http://prdownloads.sourceforge.net/libpng/libpng-1.5.10.tar.gz
 http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
