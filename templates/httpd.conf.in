@@ -229,7 +229,7 @@ LogLevel debug
     # logged therein and *not* in this file.
     #
     #CustomLog "logs/access_log" common
-    CustomLog ${buildout:directory}/var/log/httpd_access.log common
+    CustomLog ${buildout:directory}/var/log/httpd.access.log common
 
     #
     # If you prefer a logfile with access, agent, and referer information
