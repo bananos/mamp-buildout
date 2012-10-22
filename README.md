@@ -6,6 +6,7 @@ Install Apache/MySQL/PHP stack on your Mac for development purposes.
 
 Works on OSX 10.7.3 / Xcode 4.3 / llvm-gcc-4.2
 Works on OSX 10.7.4 / Xcode 4.4.1 / llvm-gcc-4.2
+Works on OSX 10.7.5 / Xcode 4.5.1 / llvm-gcc-4.2
 
 Installation
 -------------
@@ -13,20 +14,21 @@ Installation
 ### Prerequisites
 
 1. Make sure you have Xcode installed, otherwise all compilation stuff will fail.
-2. At least Python 2.6 is installed (homebrew python2.7 is recommended)
+2. At least Python 2.6 is installed (python2.7 is recommended)
 3. Make sure a set of following links is still valid
 
 ```bash
 
-http://dev.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.60.tar.gz/from/http://mysql.infocom.ua/
-http://us3.php.net/get/php-5.3.8.tar.gz/from/ua.php.net/mirror
-http://us3.php.net/get/php-5.2.17.tar.gz/from/ua.php.net/mirror
 http://curl.haxx.se/download/curl-7.25.0.tar.gz
 http://www.ijg.org/files/jpegsrc.v8d.tar.gz
 http://prdownloads.sourceforge.net/libpng/libpng-1.5.10.tar.gz
 http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
 ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.1.1.tar.gz
 http://www.apache.org/dist//httpd/httpd-2.2.22.tar.gz
+http://www.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.66.tar.gz/from/http://cdn.mysql.com/
+
+http://us.php.net/get/php-5.3.8.tar.gz/from/us.php.net/mirror
+http://us.php.net/get/php-5.2.17.tar.gz/from/us.php.net/mirror
 
 ```
 
