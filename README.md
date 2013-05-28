@@ -2,12 +2,16 @@ MAMP-buildout
 ==============
 Install Apache/MySQL/PHP stack on your Mac for development purposes.
 
-**PHP 5.2/5.3 support!**
+**PHP 5.2/5.3/5.4 support!**
 
 Works on OSX 10.7.3 / Xcode 4.3 / llvm-gcc-4.2
+
 Works on OSX 10.7.4 / Xcode 4.4.1 / llvm-gcc-4.2
+
 Works on OSX 10.7.5 / Xcode 4.5.1 / llvm-gcc-4.2
-Works on OSX 10.7.5 / Xcode 4.6 / llvm-gcc-4.2
+
+Works on OSX 10.7.5 / Xcode 4.6.2 / llvm-gcc-4.2
+
 
 Installation
 -------------
@@ -24,10 +28,10 @@ http://curl.haxx.se/download/curl-7.25.0.tar.gz
 http://www.ijg.org/files/jpegsrc.v8d.tar.gz
 http://prdownloads.sourceforge.net/libpng/libpng-1.5.10.tar.gz
 http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
-ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.1.1.tar.gz
+ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.2.tar.gz
 http://www.apache.org/dist//httpd/httpd-2.2.23.tar.gz
 http://www.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.68.tar.gz/from/http://cdn.mysql.com/
-http://us.php.net/get/php-5.3.8.tar.gz/from/us.php.net/mirror
+http://us.php.net/get/php-5.3.25.tar.gz/from/us.php.net/mirror
 http://us.php.net/get/php-5.2.17.tar.gz/from/us.php.net/mirror
 
 ```
@@ -236,16 +240,15 @@ PHP/MySQL versions known to work
 
 This buildout currently tested on following configurations:
 
-1. php-5.3.8 / MySQL-5.1.60
+1. php-5.3.25 / MySQL-5.1.60
 2. php-5.2.17 / MySQL-5.1.60
-2. @TODO add php-5.2 / php-5.1  and MySQL 5.5 versions
+2. php-5.4.15 / MySQL-5.1.60
 
 
 
 TODO
 -----
-1. Add support for php-5.1
-2. Add PostgreSQL
+1. Add PostgreSQL
 
 
 
