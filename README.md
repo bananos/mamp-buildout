@@ -4,13 +4,7 @@ Install Apache/MySQL/PHP stack on your Mac for development purposes.
 
 **PHP 5.2/5.3/5.4 support!**
 
-Works on OSX 10.7.3 / Xcode 4.3 / llvm-gcc-4.2
-
-Works on OSX 10.7.4 / Xcode 4.4.1 / llvm-gcc-4.2
-
-Works on OSX 10.7.5 / Xcode 4.5.1 / llvm-gcc-4.2
-
-Works on OSX 10.7.5 / Xcode 4.6.2 / llvm-gcc-4.2
+Works on OSX 10.9.5 / Xcode 6.0.1 
 
 
 Installation
@@ -19,25 +13,9 @@ Installation
 ### Prerequisites
 
 1. Make sure you have latest Xcode installed, otherwise all compilation stuff will fail.
-2. At least Python 2.6 is installed (python2.7 is recommended)
-3. Make sure a set of following links is still valid
-
-```bash
-
-http://curl.haxx.se/download/curl-7.25.0.tar.gz
-http://www.ijg.org/files/jpegsrc.v8d.tar.gz
-http://prdownloads.sourceforge.net/libpng/libpng-1.5.10.tar.gz
-http://prdownloads.sourceforge.net/freetype/freetype-2.1.9.tar.bz2
-ftp://ftp.gnu.org/gnu/gettext/gettext-0.18.2.tar.gz
-http://www.apache.org/dist//httpd/httpd-2.2.23.tar.gz
-http://www.mysql.com/get/Downloads/MySQL-5.1/mysql-5.1.68.tar.gz/from/http://cdn.mysql.com/
-http://us.php.net/get/php-5.3.25.tar.gz/from/us.php.net/mirror
-http://us.php.net/get/php-5.2.17.tar.gz/from/us.php.net/mirror
-
+2. At least Python 2.7 is installed python2.7
+3. Install requred MySQL version via [brew](http://mxcl.github.com/homebrew/)
 ```
-
-If some of them fail, just fix corresponding URL in ``buildout-base.cfg``
-
 
 ### Run bootstrap.py
 
@@ -57,7 +35,7 @@ Generated script '/Users/bananos/Projects/github/mamp-buildout/bin/buildout'.
 
 ### Specify your user/group
 
-Open ``buildout.cfg``,  navigate to ``[buildout]`` section and modify user/group lines:
+Open ``buildout.cfg``,  navigate to ``[buildout]`` section and modify some lines:
 
 ```ini
 
@@ -68,6 +46,14 @@ extends = buildout-base.cfg
 # you should specify your user here
 user  = bananos
 group = staff
+
+[mysql]
+version = 5.5.30
+# Override default mysql port
+port = 3305
+# brew installed mysql
+basedir = /usr/local/Cellar/mysql55/5.5.30/
+
 ```
 Save and proceed to next step.
 

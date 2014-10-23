@@ -26,7 +26,7 @@ supervisor.rpcinterface_factory=supervisor.rpcinterface:make_main_rpcinterface
 
 
 [program:mysqld]
-command = ${buildout:parts-directory}/mysql-${mysql:version}/libexec/mysqld --defaults-file=${buildout:directory}/etc/my.cnf
+command = ${mysql:basedir}/bin/mysqld --defaults-file=${buildout:directory}/etc/my.cnf
 process_name = mysqld
 directory = ${buildout:directory}/bin
 priority = 10
