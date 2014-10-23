@@ -15,10 +15,8 @@ Installation
 1. Make sure you have latest Xcode installed, otherwise all compilation stuff will fail.
 2. At least Python 2.7 is installed python2.7
 3. Install requred MySQL version via [brew](http://mxcl.github.com/homebrew/)
-```
 
 ### Run bootstrap.py
-
 
 ```bash
 
